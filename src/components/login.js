@@ -24,7 +24,11 @@ function Login() {
         })
     }
     
-  };
+  }; 
+
+  const handleNavigationToSignUp = () => {
+    window.location.href = '/Register'
+  }
 
   return (
     <Box
@@ -42,8 +46,8 @@ function Login() {
         Login
       </Typography>
       <form onSubmit={handleSubmit}>
+        <label style={{display:"flex",marginBottom:"-10px"}}>Email</label>
         <TextField
-          label="Email"
           type="email"
           fullWidth
           margin="normal"
@@ -51,8 +55,8 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+        <label style={{display:"flex",marginBottom:"-10px"}}>Password</label>
         <TextField
-          label="Password"
           type="password"
           fullWidth
           margin="normal"
@@ -68,6 +72,15 @@ function Login() {
           sx={{ mt: 2 }}
         >
           Login
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{ mt: 2 }}
+          onClick={handleNavigationToSignUp}
+        >
+          Sign up
         </Button>
       </form>
     </Box>

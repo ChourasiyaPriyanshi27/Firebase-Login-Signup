@@ -19,7 +19,9 @@ function Register() {
       [name]: value,
     }));
   };
-
+  const handleLoginNavigation = () => {
+    window.location.href = "/Login"
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData;  
@@ -63,9 +65,10 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
+          <label style={{display:"flex"}}>First Name</label>
             <TextField
-              label="First Name"
-              name="firstName"
+              placeholder='FirstName'
+              name="FirstName"
               fullWidth
               value={formData.firstName}
               onChange={handleChange}
@@ -73,8 +76,9 @@ function Register() {
             />
           </Grid>
           <Grid item xs={12} sm={6}>
+          <label style={{display:"flex"}}>Last Name</label>
             <TextField
-              label="Last Name"
+              placeholder='Lastname'
               name="lastName"
               fullWidth
               value={formData.lastName}
@@ -83,8 +87,9 @@ function Register() {
             />
           </Grid>
           <Grid item xs={12}>
+          <label style={{display:"flex"}}>Email</label>
             <TextField
-              label="Email"
+              placeholder='Email'
               type="email"
               name="email"
               fullWidth
@@ -94,8 +99,9 @@ function Register() {
             />
           </Grid>
           <Grid item xs={12}>
+            <label style={{display:"flex"}}>Password</label>
             <TextField
-              label="Password"
+              placeholder='Password'
               type="password"
               name="password"
               fullWidth
@@ -113,6 +119,15 @@ function Register() {
           sx={{ mt: 3 }}
         >
           Sign Up
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{ mt: 3 }}
+          onClick={handleLoginNavigation}
+        >
+        Login
         </Button>
       </form>
     </Box>
