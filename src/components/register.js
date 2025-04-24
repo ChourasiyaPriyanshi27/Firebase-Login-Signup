@@ -68,7 +68,7 @@ function Register() {
           <label style={{display:"flex"}}>First Name</label>
             <TextField
               placeholder='FirstName'
-              name="FirstName"
+              name="firstName"
               fullWidth
               value={formData.firstName}
               onChange={handleChange}
